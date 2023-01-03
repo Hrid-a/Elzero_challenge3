@@ -564,16 +564,25 @@ header .inside-nav li:hover {
 .features .feat:first-of-type button {
     color: #f44036;
     border-color: #f44036;
+    background-image: linear-gradient(to right, #f44036 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
 }
 
 .features .feat:nth-of-type(2) button {
     color: #009688;
     border-color: #009688;
+    background-image: linear-gradient(to right, #009688 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
 }
 
 .features .feat:last-of-type button {
     color: #03a9f4;
     border-color: #03a9f4;
+    background-image: linear-gradient(to right, #03a9f4 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
 }
 
 .features .feat:hover button {
@@ -581,17 +590,402 @@ header .inside-nav li:hover {
 }
 
 .features .feat:first-of-type:hover button {
-    background-color: #f44036;
+    background-position: 0;
 }
 
 .features .feat:nth-of-type(2):hover button {
-    background-color: #009688;
+    background-position: 0;
 }
 
 .features .feat:last-of-type:hover button {
-    background-color: #03a9f4;
+    background-position: 0;
 }
 
+/*  Features End */
+.team-members {
+    padding-block: 60px;
+    position: relative;
+}
+
+.team-members .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.team-members .player {
+    padding: 30px 25px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.team-members .player::before,
+.team-members .player::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 95px);
+    background-color: #eee;
+    z-index: -1;
+}
+
+.team-members .player::before {
+    width: calc(100% - 95px);
+    background-color: #eee;
+}
+
+.team-members .player::after {
+    width: 0;
+    background-color: rgb(39 37 37 / 30%);
+    transition: .5s;
+}
+
+.team-members .player:hover::after {
+    width: calc(100% - 95px);
+}
+
+.team-members .figure {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.team-members figure .image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.team-members figure figcaption {
+    padding-left: 80px;
+}
+
+.team-members .player:hover img {
+    filter: grayscale(1);
+}
+
+.team-members span {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+    padding-block: 10px;
+}
+
+.team-members .player:hover span {
+    color: #736b6b;
+}
+
+.team-members figcaption p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #736b6b;
+}
+
+.team-members .icons i {
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    color: #777;
+    cursor: pointer;
+}
+
+.team-members .icons i:hover {
+    color: var(--primary-blue);
+}
+
+.pattern {
+    position: relative;
+}
+
+.pattern::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+        linear-gradient(225deg, white 25%, transparent 25%);
+    background-size: 30px 30px;
+}
+
+/* Team Members End */
+.services {
+    padding-block: 75px;
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 35px;
+}
+
+.services .service {
+    background-color: white;
+    text-align: center;
+    counter-increment: count;
+    transition: .5s;
+    position: relative;
+    box-shadow: 0 2px 10px #00000026;
+}
+
+.services .service::before {
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: var(--primary-blue);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+
+.services .service:hover {
+    transform: translateY(-10px);
+}
+
+.services .service:hover::before {
+    width: 100%;
+    height: 4px;
+    left: 50%;
+}
+
+.services .service i {
+    display: block;
+    font-size: 60px;
+    color: #eee;
+    margin-block: 25px;
+}
+
+.services .service span {
+    color: var(--primary-blue);
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+
+}
+
+.services .service .details {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.services .details::before {
+    content: "0" counter(count);
+    color: white;
+    background-color: var(--primary-blue);
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.services .details .triangle {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    background-color: #d5d5d5;
+    left: 86px;
+    transform: skew(-25deg);
+}
+
+.services a {
+    color: var(--primary-blue);
+    text-transform: capitalize;
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+}
+
+/* Services End */
+.skills {
+    padding-block: 70px;
+    position: relative;
+}
+
+.skills .container {
+    display: flex;
+}
+
+@media (max-width:991px) {
+    .skills .image {
+        display: none;
+    }
+}
+
+.skills .container .skill-content {
+    flex: 1;
+}
+
+.skills .skill:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.skills .skill h4 {
+    margin-bottom: 10px;
+}
+
+.skills .skill span {
+    display: block;
+    width: 100%;
+    background-color: #eee;
+    height: 30px;
+    position: relative;
+}
+
+.skills .skill span::before {
+    content: '';
+    height: 100%;
+    background-color: var(--primary-blue);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skills .skill:first-of-type span::before,
+.skills .skill:last-of-type span::before {
+    width: 80%;
+}
+
+.skills .skill:nth-of-type(2) span::before {
+    width: 85%;
+}
+
+.skills .skill:nth-of-type(3) span::before {
+    width: 75%;
+}
+
+.skills .skill span::after {
+    color: var(--primary-blue);
+    padding: 2px 3px;
+    font-weight: 700;
+    border: 1px solid #777;
+    border-radius: 6px;
+    position: absolute;
+    right: 0;
+    top: -40px;
+}
+
+.skills .skill:first-of-type span::after,
+.skills .skill:last-of-type span::after {
+    content: '80%';
+}
+
+.skills .skill:nth-of-type(2) span::after {
+    content: '85%';
+}
+
+.skills .skill:nth-of-type(3) span::after {
+    content: '75%';
+}
+
+/* Skills ENd */
+.work-steps {
+    padding-block: 70px;
+    position: relative;
+}
+
+.work-steps::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.work-steps .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+
+    .work-steps .work-content {
+        margin-top: 35px;
+    }
+
+    .work-steps .step {
+        margin-block: 20px;
+    }
+}
+
+.work-steps .work-content {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.work-steps .step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f5f5;
+    border: 3px solid white;
+    border-radius: 6px;
+    padding: 25px;
+    margin-block: 15px;
+}
+
+@media (max-width:767px) {
+    .work-steps .step {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.work-steps .step .image {
+    max-width: 60px;
+    margin-right: 20px;
+}
+
+.work-steps .step .text {
+    flex: 1;
+}
+
+.work-steps .step h3 {
+    font-size: 23px;
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.work-steps .step p {
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0 0 0;
+}
+
+/* Work Steps End */
 /* Utlity Classes */
 .main-head {
     width: fit-content;
@@ -599,9 +993,9 @@ header .inside-nav li:hover {
     border: 1px solid;
     padding: 10px 25px;
     color: #3a3535;
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 10px;
     transition-delay: .5s;
@@ -619,7 +1013,6 @@ header .inside-nav li:hover {
     border-radius: 50%;
     background-color: var(--primary-blue);
     transition: .5s;
-
 }
 
 .main-head::before {
